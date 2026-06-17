@@ -1,5 +1,5 @@
 /* ==========================================
-   IMPORTAZIONE FONT PROFESSIONALI (AIRBNB STYLE)
+   IMPORTAZIONE FONT PROFESSIONALI
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
 
@@ -29,7 +29,7 @@ body {
 }
 
 /* ==========================================
-   MENU LINGUA INTEGRATO NELLA HERO (MINIMALE)
+   MENU LINGUA INTEGRATO NELLA HERO
    ========================================== */
 .lang-selector {
     position: absolute;
@@ -370,6 +370,38 @@ button:hover {
 }
 
 /* ==========================================
+   STILE MESSAGGIO DI CONFERMA INVIATO
+   ========================================== */
+.form-status {
+    display: none; 
+    margin-top: 2rem;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.form-status .success-msg {
+    color: #1e4620;
+    background-color: #edf7ed;
+    border: 1px solid #c3e6cb;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form-status .error-msg {
+    color: #611a15;
+    background-color: #fde8e8;
+    border: 1px solid #f5c6cb;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* ==========================================
    SEZIONE MAPPA
    ========================================== */
 .map-section {
@@ -443,6 +475,11 @@ footer {
     letter-spacing: 0.2px;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* ==========================================
    MEDIA QUERIES (RESPONSIVE PC E TABLET)
    ========================================== */
@@ -465,33 +502,21 @@ footer {
         border-bottom: none; 
     }
     
-    .highlight-card {
-        flex: 1;
-    }
-    
+    .highlight-card { flex: 1; }
     .highlight-card h3 { font-size: 1.3rem; }
 
-    .amenities-section {
-        padding: 1.5rem 1.5rem 3.5rem 1.5rem;
-    }
+    .amenities-section { padding: 1.5rem 1.5rem 3.5rem 1.5rem; }
     .amenities-section h2 { font-size: 2rem; margin-bottom: 2.2rem; }
-    .amenities-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px 64px;
-    }
-    .amenity-item {
-        padding-bottom: 16px;
-    }
-    .amenities-grid .amenity-item:last-child {
-        border-bottom: 1px solid var(--border-light);
-    }
+    .amenities-grid { grid-template-columns: 1fr 1fr; gap: 24px 64px; }
+    .amenity-item { padding-bottom: 16px; }
+    .amenities-grid .amenity-item:last-child { border-bottom: 1px solid var(--border-light); }
 
     .gallery-container h2 { font-size: 2rem; margin-bottom: 2rem; }
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .gallery-item { height: 240px; }
     .featured { grid-column: span 2; grid-row: span 2; height: 496px !important; }
 
-    form { grid-template-columns: 1fr 1fr; gap: 24px; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .full-width { grid-column: span 2; }
     .btn-container { grid-column: span 2; } 
 
