@@ -7,7 +7,6 @@ const translations = {
         "hero-subtitle": "La tua vacanza sul mare di Cetara",
         "hero-cta": "Prenota ora",
         
-        // Nuovi Testi Richiesti (Italiano)
         "hero-title": "Il blu del mare dentro casa",
         "hero-desc": "<strong>A casa di Gennarino</strong> è il rifugio perfetto per vivere Cetara lentamente.<br><br>A pochi passi dalla spiaggia e dal molo dei traghetti, questo spazio è il punto di partenza ideale per scoprire Cetara e la Costiera Amalfitana. Il mare, il borgo, i ristoranti e il porto sono tutti raggiungibili a piedi.<br><br>Un piccolo appartamento accogliente dove svegliarsi con l’aria di mare e vivere il ritmo autentico del paese, tra giornate di sole, passeggiate e sapori della tradizione.",
         
@@ -43,6 +42,9 @@ const translations = {
         "map-title": "La posizione",
         "footer-rights": "© 2026 A casa di Gennarino. Tutti i diritti riservati.",
         "form-subject": "Nuova richiesta di prenotazione - A casa di Gennarino",
+        "form-success": "Grazie per la richiesta, lo staff le risponderà al più presto.",
+        "form-error": "Si è verificato un errore durante l'invio. Riprova più tardi o scrivici via email.",
+        
         "alt-terrazzino": "Il terrazzino vista mare",
         "alt-camera1": "Camera da letto principale",
         "alt-camera2": "Dettaglio letto matrimoniale",
@@ -58,7 +60,6 @@ const translations = {
         "hero-subtitle": "Your vacation by the sea of Cetara",
         "hero-cta": "Book now",
         
-        // Traduzione coordinata dei nuovi testi (Inglese)
         "hero-title": "The blue of the sea inside the house",
         "hero-desc": "<strong>A casa di Gennarino</strong> is the perfect retreat to experience Cetara at a slow pace.<br><br>Just a few steps from the beach and the ferry pier, this space is the ideal starting point to discover Cetara and the Amalfi Coast. The sea, the village, the restaurants, and the port are all within walking distance.<br><br>A cozy little apartment where you can wake up to the sea breeze and experience the authentic rhythm of the village, amidst sunny days, walks, and traditional flavors.",
         
@@ -94,6 +95,9 @@ const translations = {
         "map-title": "The location",
         "footer-rights": "© 2026 A casa di Gennarino. All rights reserved.",
         "form-subject": "New booking request - A casa di Gennarino",
+        "form-success": "Thank you for your request, our staff will reply as soon as possible.",
+        "form-error": "An error occurred while sending. Please try again later or contact us via email.",
+        
         "alt-terrazzino": "The private terrace with sea view",
         "alt-camera1": "Main bedroom layout",
         "alt-camera2": "Double bed setup details",
@@ -231,4 +235,55 @@ function handleSwipe() {
     const swipeThreshold = 50;
     if (touchEndX < touchStartX - swipeThreshold) updateLightbox(currentIndex + 1);
     if (touchEndX > touchStartX + swipeThreshold) updateLightbox(currentIndex - 1);
+}
+
+
+// ==========================================
+/* GESTIONE INVIO FORM SENZA CAMBIO PAGINA */
+// ==========================================
+const bookingForm = document.getElementById('bookingForm');
+const formStatus = document.getElementById('formStatus');
+
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        const currentLang = localStorage.getItem('selectedLang') || 'it';
+        const submitBtn = bookingForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = currentLang === 'it' ? 'Invio in corso...' : 'Sending...';
+
+        const formData = new FormData(bookingForm);
+
+        fetch(bookingForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Errore di rete');
+            }
+        })
+        .then(data => {
+            bookingForm.reset(); 
+            bookingForm.style.display = 'none'; 
+            
+            formStatus.innerHTML = `<div class="success-msg" data-i18n="form-success">${translations[currentLang]['form-success']}</div>`;
+            formStatus.style.display = 'block';
+        })
+        .catch(error => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+            
+            formStatus.innerHTML = `<div class="error-msg" data-i18n="form-error">${translations[currentLang]['form-error']}</div>`;
+            formStatus.style.display = 'block';
+        });
+    });
 }

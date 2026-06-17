@@ -15,7 +15,6 @@
     <meta property="og:url" content="https://acasadigennarino.it/">
     <meta property="og:type" content="website">
 
-    
     <meta name="google-site-verification" content="5XxQ7eivEIzSu3dgaqPF8dQaJY2xbphcNC4jRB8RFgo" />
 
     <link rel="stylesheet" href="style.css">
@@ -73,14 +72,14 @@
 
     <section class="highlights-section">
         <div class="highlight-card">
-            <img src="media/icone/icona-spiaggia.svg" class="highlight-icon-svg" alt="" data-i18n-alt="alt-icon-beach">
+            <img src="media/icona-spiaggia.svg" class="highlight-icon-svg" alt="" data-i18n-alt="alt-icon-beach">
             <div class="highlight-text">
                 <h3 data-i18n="highlight-beach-title">A due passi dal mare</h3>
                 <p data-i18n="highlight-beach-desc">L'appartamento si trova a solo 30 metri dalla spiaggia e a pochi passi dal molo dei traghetti.</p>
             </div>
         </div>
         <div class="highlight-card">
-            <img src="media/icone/icona-ospiti.svg" class="highlight-icon-svg" alt="" data-i18n-alt="alt-icon-guests">
+            <img src="media/icona-ospiti.svg" class="highlight-icon-svg" alt="" data-i18n-alt="alt-icon-guests">
             <div class="highlight-text">
                 <h3 data-i18n="highlight-guests-title">Massimo 3 ospiti</h3>
                 <p data-i18n="highlight-guests-desc">Ideale per coppie, amici e famiglie con bambino.</p>
@@ -91,24 +90,12 @@
     <section class="amenities-section">
         <h2 data-i18n="amenities-title">Servizi inclusi</h2>
         <div class="amenities-grid">
-            <div class="amenity-item">
-                <span data-i18n="amenity-linens">Lenzuola e asciugamani</span>
-            </div>
-            <div class="amenity-item">
-                <span data-i18n="amenity-wifi">Wifi veloce</span>
-            </div>
-            <div class="amenity-item">
-                <span data-i18n="amenity-tv">TV</span>
-            </div>
-            <div class="amenity-item">
-                <span data-i18n="amenity-ac">Aria condizionata</span>
-            </div>
-            <div class="amenity-item">
-                <span data-i18n="amenity-hairdryer">Asciugacapelli</span>
-            </div>
-            <div class="amenity-item">
-                <span data-i18n="amenity-bar">Angolo bar con macchinetta per caffè, mini frigo e bollitore</span>
-            </div>
+            <div class="amenity-item"><span data-i18n="amenity-linens">Lenzuola e asciugamani</span></div>
+            <div class="amenity-item"><span data-i18n="amenity-wifi">Wifi veloce</span></div>
+            <div class="amenity-item"><span data-i18n="amenity-tv">TV</span></div>
+            <div class="amenity-item"><span data-i18n="amenity-ac">Aria condizionata</span></div>
+            <div class="amenity-item"><span data-i18n="amenity-hairdryer">Asciugacapelli</span></div>
+            <div class="amenity-item"><span data-i18n="amenity-bar">Angolo bar con macchinetta per caffè, mini frigo e bollitore</span></div>
         </div>
     </section>
 
@@ -157,7 +144,7 @@
             <h2 data-i18n="booking-title">Verifica la disponibilità</h2>
             <p data-i18n="booking-desc">Inviaci una richiesta non vincolante. Ti risponeremo con la nostra migliore offerta tariffaria.</p>
             
-            <form action="https://formsubmit.co/skycastiello@gmail.com" method="POST">
+            <form id="bookingForm" action="https://formsubmit.co/ajax/skycastiello@gmail.com" method="POST">
                 <input type="hidden" name="_subject" id="formSubject" value="Nuova richiesta di prenotazione - A casa di Gennarino">
                 <input type="hidden" name="_captcha" value="false">
                 
@@ -195,6 +182,8 @@
                     <button type="submit" data-i18n="btn-submit">Invia Richiesta</button>
                 </div>
             </form>
+
+            <div id="formStatus" class="form-status"></div>
         </div>
     </section>
 
