@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page-title">A casa di Gennarino | Casa Vacanza Vista Mare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero-banner">
+        <div class="lang-selector">
+            <select id="langSelect">
+                <option value="it">IT</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="media/logo.png" alt="Logo A casa di Gennarino">
+            </div>
+            <h2 class="hero-subtitle" data-i18n="hero-subtitle">La tua vacanza sul mare di Cetara</h2>
+            <a href="#booking-form" class="hero-cta" data-i18n="hero-cta">Prenota ora</a>
+        </div>
+    </section>
+
+    <section class="hero-text-section">
+        <h1 data-i18n="hero-title">Il blu del mare dentro casa</h1>
+        <p data-i18n="hero-desc"><strong>A casa di Gennarino</strong> è il rifugio perfetto per vivere Cetara lentamente.<br><br>A pochi passi dalla spiaggia e dal molo dei traghetti, questo spazio è il punto di partenza ideale per scoprire Cetara e la Costiera Amalfitana. Il mare, il borgo, i ristoranti e il porto sono tutti raggiungibili a piedi.<br><br>Un piccolo appartamento accogliente dove svegliarsi con l’aria di mare e vivere il ritmo autentico del paese, tra giornate di sole, passeggiate e sapori della tradizione.</p>
+    </section>
+
+    <section class="highlights-section">
+        <div class="highlight-card">
+            <img src="media/icone/icona-spiaggia.svg" class="highlight-icon-svg" alt="" data-i18n-alt="alt-icon-beach">
+            <div class="highlight-text">
+                <h3 data-i18n="highlight-beach-title">A due passi dal mare</h3>
+                <p data-i18n="highlight-beach-desc">L'appartamento si trova a solo 30 metri dalla spiaggia e a pochi passi dal molo dei traghetti.</p>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <img src="media/icone/icona-ospiti.svg" class="highlight-icon-svg" alt="" data-i18n-alt="alt-icon-guests">
+            <div class="highlight-text">
+                <h3 data-i18n="highlight-guests-title">Massimo 3 ospiti</h3>
+                <p data-i18n="highlight-guests-desc">Ideale per coppie, amici e famiglie con bambino.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenities-section">
+        <h2 data-i18n="amenities-title">Servizi inclusi</h2>
+        <div class="amenities-grid">
+            <div class="amenity-item">
+                <span data-i18n="amenity-linens">Lenzuola e asciugamani</span>
+            </div>
+            <div class="amenity-item">
+                <span data-i18n="amenity-wifi">Wifi veloce</span>
+            </div>
+            <div class="amenity-item">
+                <span data-i18n="amenity-tv">TV</span>
+            </div>
+            <div class="amenity-item">
+                <span data-i18n="amenity-ac">Aria condizionata</span>
+            </div>
+            <div class="amenity-item">
+                <span data-i18n="amenity-hairdryer">Asciugacapelli</span>
+            </div>
+            <div class="amenity-item">
+                <span data-i18n="amenity-bar">Angolo bar con macchinetta per caffè, mini frigo e bollitore</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-container">
+        <h2 data-i18n="gallery-title">Esplora la struttura</h2>
+        <div class="gallery">
+            <div class="gallery-item featured">
+                <img src="media/terrazzino.jpg" data-i18n-alt="alt-terrazzino" alt="Il terrazzino vista mare">
+            </div>
+            <div class="gallery-item">
+                <img src="media/camera-da-letto.jpg" data-i18n-alt="alt-camera1" alt="Camera da letto principale">
+            </div>
+            <div class="gallery-item">
+                <img src="media/camera-da-letto-2.jpg" data-i18n-alt="alt-camera2" alt="Dettaglio letto matrimoniale">
+            </div>
+            <div class="gallery-item">
+                <img src="media/angolo-bar.jpg" data-i18n-alt="alt-espresso" alt="Angolo bar e macchina del caffè">
+            </div>
+            <div class="gallery-item">
+                <img src="media/bagno1.jpg" data-i18n-alt="alt-bagno1" alt="Il bagno con maioliche blu">
+            </div>
+            <div class="gallery-item">
+                <img src="media/camera-da-letto-3.jpg" data-i18n-alt="alt-camera3" alt="Dettaglio arredamento camera">
+            </div>
+            <div class="gallery-item">
+                <img src="media/camera-da-letto-4.jpg" data-i18n-alt="alt-camera4" alt="Seconda inquadratura camera">
+            </div>
+            <div class="gallery-item">
+                <img src="media/bagno-dettaglio-1.jpg" data-i18n-alt="alt-bagno2" alt="Dettaglio lavandino e rivestimenti">
+            </div>
+            <div class="gallery-item">
+                <img src="media/dettaglio-tazze.jpg" data-i18n-alt="alt-tazze" alt="Le tazze colorate per la colazione">
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">×</span>
+        <span class="lightbox-arrow lightbox-prev" id="lightbox-prev">❮</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <span class="lightbox-arrow lightbox-next" id="lightbox-next">❯</span>
+    </div>
+
+    <section id="booking-form" class="booking-section">
+        <div class="booking-container">
+            <h2 data-i18n="booking-title">Verifica la disponibilità</h2>
+            <p data-i18n="booking-desc">Inviaci una richiesta non vincolante. Ti risponeremo con la nostra migliore offerta tariffaria.</p>
+            
+            <form action="https://formsubmit.co/skycastiello@gmail.com" method="POST">
+                <input type="hidden" name="_subject" id="formSubject" value="Nuova richiesta di prenotazione - A casa di Gennarino">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="input-group">
+                    <label for="nome" data-i18n="label-nome">Nome</label>
+                    <input type="text" id="nome" name="nome" data-i18n-placeholder="placeholder-nome" placeholder="Il tuo nome" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="cognome" data-i18n="label-cognome">Cognome</label>
+                    <input type="text" id="cognome" name="cognome" data-i18n-placeholder="placeholder-cognome" placeholder="Il tuo cognome" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="contatto" data-i18n="label-contatto">Telefono o Email</label>
+                    <input type="text" id="contatto" name="contatto" data-i18n-placeholder="placeholder-contatto" placeholder="Esempio: +39 333 1234567 o nome@email.it" required>
+                </div>
+                
+                <div class="input-group full-width">
+                    <label for="ospiti" data-i18n="label-ospiti">Numero di Ospiti (Max 3)</label>
+                    <input type="number" id="ospiti" name="ospiti" min="1" max="3" data-i18n-placeholder="placeholder-ospiti" placeholder="Seleziona da 1 a 3 ospiti" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="checkin" data-i18n="label-checkin">Data Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="checkout" data-i18n="label-checkout">Data Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+
+                <div class="full-width btn-container">
+                    <button type="submit" data-i18n="btn-submit">Invia Richiesta</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2 data-i18n="map-title">La posizione</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189.20176505970238!2d14.701591324821754!3d40.64689891527938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bea86247d3f2b%3A0x6c61a1a1602b3e06!2sCorso%20Garibaldi%2C%2084010%20Cetara%20SA!5e0!3m2!1sit!2sit!4v1781682462296!5m2!1sit!2sit" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p><span data-i18n="footer-rights">© 2026 A casa di Gennarino. Tutti i diritti riservati.</span></p>
+        <p class="footer-cin-cir">
+            <strong>CIN:</strong> IT065041CZWMRWRQYU  |  <strong>CIR:</strong> 15065041EXTUS47
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
